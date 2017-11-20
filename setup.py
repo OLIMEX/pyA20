@@ -1,7 +1,7 @@
 from distutils.core import setup
 from distutils.core import Extension
-import sys
 import pyA20
+import sys
 
 modules = [
     Extension('pyA20.gpio.gpio', sources=[
@@ -21,7 +21,7 @@ setup(
     url='https://www.olimex.com/',
     license=pyA20.__license__,
     packages=['pyA20', 'pyA20.gpio', 'pyA20.i2c', 'pyA20.spi'],
-    description='Control GPIO, I2C and SPI',
+    description='Control GPIO, I2C and SPI on A20-OLinuXino-MICRO',
     long_description=open('README.rst').read(),
     classifiers=['Development Status :: 3 - Alpha',
                  'Environment :: Console',
