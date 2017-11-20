@@ -22,7 +22,7 @@ setup(
     license=pyA20.__license__,
     packages=['pyA20', 'pyA20.gpio', 'pyA20.i2c', 'pyA20.spi'],
     description='Control GPIO, I2C and SPI',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     classifiers=['Development Status :: 3 - Alpha',
                  'Environment :: Console',
                  'Intended Audience :: Developers',

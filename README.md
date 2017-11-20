@@ -186,9 +186,13 @@ In ths example:
 ```
 
 ## Changelog
+* pyA20 0.2.3 (20 NOV 2017)
+ 	* Updated README
+
 * pyA20 0.2.2 (20 NOV 2017)
 	* Updated README
 	* Removed processor checking to allow build scripts
+	* Update license
 
 * pyA20 0.2.0 (02 SEP 2014)
 	* Updated to enable SPI and I2C control
