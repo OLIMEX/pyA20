@@ -16,6 +16,8 @@
 
 # pyA20
 
+[![Build Status](https://travis-ci.org/StefanMavrodiev/pyA20.svg?branch=master)](https://travis-ci.org/StefanMavrodiev/pyA20)
+
 ## Description
 The package provide methods for controlling GPIO pins, I2C and SPI buses. It's
 written for [A20-OLinuXino-MICRO][A20-OLinuXino-MICRO], but it can be used with
