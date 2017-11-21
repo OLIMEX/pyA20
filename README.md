@@ -1,19 +1,3 @@
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [pyA20](#pya20)
-	- [Description](#description)
-	- [GPIO methods](#gpio-methods)
-	- [I2C methods](#i2c-methods)
-	- [SPI methods](#spi-methods)
-	- [Examples](#examples)
-		- [GPIO](#gpio)
-		- [I2C](#i2c)
-		- [SPI](#spi)
-	- [Changelog](#changelog)
-
-<!-- /TOC -->
-
-
 # pyA20
 
 [![Build Status](https://travis-ci.org/StefanMavrodiev/pyA20.svg?branch=master)](https://travis-ci.org/StefanMavrodiev/pyA20)
@@ -186,7 +170,7 @@ In ths example:
 ```
 
 ## Changelog
-* pyA20 0.2.6 (20 NOV 2017)
+* pyA20 0.2.7 (20 NOV 2017)
 	* Updated README
 	* Removed processor checking to allow build scripts
 	* Update license

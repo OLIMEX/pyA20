@@ -1,25 +1,3 @@
-.. raw:: html
-
-   <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
--  `pyA20 <#pya20>`__
-
-   -  `Description <#description>`__
-   -  `GPIO methods <#gpio-methods>`__
-   -  `I2C methods <#i2c-methods>`__
-   -  `SPI methods <#spi-methods>`__
-   -  `Examples <#examples>`__
-
-      -  `GPIO <#gpio>`__
-      -  `I2C <#i2c>`__
-      -  `SPI <#spi>`__
-
-   -  `Changelog <#changelog>`__
-
-.. raw:: html
-
-   <!-- /TOC -->
-
 pyA20
 =====
 
@@ -192,7 +170,7 @@ opened \* Some data is transfered to slave device
 Changelog
 ---------
 
--  pyA20 0.2.6 (20 NOV 2017)
+-  pyA20 0.2.7 (20 NOV 2017)
 
    -  Updated README
    -  Removed processor checking to allow build scripts
