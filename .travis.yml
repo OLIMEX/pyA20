@@ -16,7 +16,6 @@ install:
   - python setup.py install
 
 script:
-  - set -e
   - trial pyA20.gpio
   - trial pyA20.i2c
   - trial pyA20.spi
