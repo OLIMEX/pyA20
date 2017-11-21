@@ -49,8 +49,7 @@ The gpio are named two ways:
 	>>> from pyA20.gpio import port
 	>>> dir(port)
 
-*  By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3 and etc.
-These can be imported from connector module:
+* By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3 and etc:
 
 .. code:: python
 
@@ -181,7 +180,7 @@ opened \* Some data is transfered to slave device
 Changelog
 ---------
 
--  pyA20 0.2.8 (20 NOV 2017)
+-  pyA20 0.2.9 (21 NOV 2017)
 
    -  Updated README
    -  Removed processor checking to allow build scripts
