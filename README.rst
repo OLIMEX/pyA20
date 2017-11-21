@@ -24,47 +24,47 @@ GPIO methods
 
 The following methods are available:
 
-	* **init()** - Make initialization of the module. Must be called first.
-	* **getcfg()** - Read current configuration of gpio.
-	* **setcfg()** - Write configuration to gpio.
-	* **input()** - Return current value of gpio.
-	* **output()** - Set output value.
-	* **pullup()** - Set pull-up/pull-down.
+* **init()** - Make initialization of the module. Must be called first.
+* **getcfg()** - Read current configuration of gpio.
+* **setcfg()** - Write configuration to gpio.
+* **input()** - Return current value of gpio.
+* **output()** - Set output value.
+* **pullup()** - Set pull-up/pull-down.
 
 The available constants are:
 
-	* **HIGH** - 1
-	* **LOW** - 0
-	* **INPUT** - 0
-	* **OUPTUT** - 1
-	* **PULLUP** - 1
-	* **PULLDOWN** - 2
+* **HIGH** - 1
+* **LOW** - 0
+* **INPUT** - 0
+* **OUPTUT** - 1
+* **PULLUP** - 1
+* **PULLDOWN** - 2
 
 The gpio are named two ways:
 
-	* By port name: PH0, PG2, PE10, etc. These can be imported from port module:
+* By port name: PH0, PG2, PE10, etc. These can be imported from port module:
 
 .. code:: python
 
-        >>> from pyA20.gpio import port
-        >>> dir(port)
+	>>> from pyA20.gpio import port
+	>>> dir(port)
 
-	*  By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3 and
-	etc. These can be imported from connector module:
+*  By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3 and etc.
+These can be imported from connector module:
 
-   .. code:: python
+.. code:: python
 
-       >>> from pyA20.gpio import connector
-       >>> dir(connector)
+	>>> from pyA20.gpio import connector
+	>>> dir(connector)
 
 Generally these constants are just an offset in the memory from the base
 GPIO address, so they can be assigned to a number type variable.
 
 .. code:: python
 
-        >>> led = port.PH2
-        >>> print led
-        226
+	>>> led = port.PH2
+	>>> print led
+	226
 
 I2C methods
 -----------
@@ -96,32 +96,31 @@ corresponding output value
 
 .. code:: python
 
+	#!/usr/bin/env python
 
-        #!/usr/bin/env python
+	from pyA20.gpio import gpio
+	from pyA20.gpio import port
+	from pyA20.gpio import connector
 
-        from pyA20.gpio import gpio
-        from pyA20.gpio import port
-        from pyA20.gpio import connector
+	gpio.init() #Initialize module. Always called first
 
-        gpio.init() #Initialize module. Always called first
+	gpio.setcfg(port.PG9, gpio.OUTPUT)  #Configure LED1 as output
+	gpio.setcfg(port.PG9, 1)    #This is the same as above
 
-        gpio.setcfg(port.PG9, gpio.OUTPUT)  #Configure LED1 as output
-        gpio.setcfg(port.PG9, 1)    #This is the same as above
+	gpio.setcfg(port.PE11, gpio.INPUT)   #Configure PE11 as input
+	gpio.setcfg(port.PE11, 0)   #Same as above
 
-        gpio.setcfg(port.PE11, gpio.INPUT)   #Configure PE11 as input
-        gpio.setcfg(port.PE11, 0)   #Same as above
+	gpio.pullup(port.PE11, 0)   #Clear pullups
+	gpio.pullup(port.PE11, gpio.PULLDOWN)    #Enable pull-down
+	gpio.pullup(port.PE11, gpio.PULLUP)  #Enable pull-up
 
-        gpio.pullup(port.PE11, 0)   #Clear pullups
-        gpio.pullup(port.PE11, gpio.PULLDOWN)    #Enable pull-down
-        gpio.pullup(port.PE11, gpio.PULLUP)  #Enable pull-up
-
-        while True:
-            if gpio.input(port.PE11) == 1:
-                gpio.output(port.PG9, gpio.LOW)
-                gpio.output(port.PG9, 0)
-            else:
-                gpio.output(port.PG9, gpio.HIGH)
-                gpio.output(port.PG9, 1)
+	while True:
+		if gpio.input(port.PE11) == 1:
+			gpio.output(port.PG9, gpio.LOW)
+			gpio.output(port.PG9, 0)
+		else:
+			gpio.output(port.PG9, gpio.HIGH)
+			gpio.output(port.PG9, 1)
 
 I2C
 ~~~
@@ -131,22 +130,22 @@ Some data is written, then verified
 
 .. code:: python
 
-        #!/usr/bin/env python
+	#!/usr/bin/env python
 
-        from pyA20 import i2c
+	from pyA20 import i2c
 
-        i2c.init("/dev/i2c-2")  #Initialize module to use /dev/i2c-2
-        i2c.open(0x55)  #The slave device address is 0x55
+	i2c.init("/dev/i2c-2")  #Initialize module to use /dev/i2c-2
+	i2c.open(0x55)  #The slave device address is 0x55
 
-        #If we want to write to some register
-        i2c.write([0xAA, 0x20]) #Write 0x20 to register 0xAA
-        i2c.write([0xAA, 0x10, 0x11, 0x12]) #Do continuous write with start address 0xAA
+	#If we want to write to some register
+	i2c.write([0xAA, 0x20]) #Write 0x20 to register 0xAA
+	i2c.write([0xAA, 0x10, 0x11, 0x12]) #Do continuous write with start address 0xAA
 
-        #If we want to do write and read
-        i2c.write([0xAA])   #Set address at 0xAA register
-        value = i2c.read(1) #Read 1 byte with start address 0xAA
+	#If we want to do write and read
+	i2c.write([0xAA])   #Set address at 0xAA register
+	value = i2c.read(1) #Read 1 byte with start address 0xAA
 
-        i2c.close() #End communication with slave device
+	i2c.close() #End communication with slave device
 
 SPI
 ~~~
@@ -156,28 +155,28 @@ opened \* Some data is transfered to slave device
 
 .. code:: python
 
-        #!/usr/bin/env python
+	#!/usr/bin/env python
 
-        from pyA20 import spi
+	from pyA20 import spi
 
-        spi.open("/dev/spidev2.0")
-        #Open SPI device with default settings
-        # mode : 0
-        # speed : 100000kHz
-        # delay : 0
-        # bits-per-word: 8
+	spi.open("/dev/spidev2.0")
+	#Open SPI device with default settings
+	# mode : 0
+	# speed : 100000kHz
+	# delay : 0
+	# bits-per-word: 8
 
-        #Different ways to open device
-        spi.open("/dev/spidev2.0", mode=1)
-        spi.open("/dev/spidev2.0", mode=2, delay=0)
-        spi.open("/dev/spidev2.0", mode=3, delay=0, bits_per_word=8)
-        spi.open("/dev/spidev2.0", mode=0, delay=0, bits_per_word=8, speed=100000)
+	#Different ways to open device
+	spi.open("/dev/spidev2.0", mode=1)
+	spi.open("/dev/spidev2.0", mode=2, delay=0)
+	spi.open("/dev/spidev2.0", mode=3, delay=0, bits_per_word=8)
+	spi.open("/dev/spidev2.0", mode=0, delay=0, bits_per_word=8, speed=100000)
 
-        spi.write([0x01, 0x02]) #Write 2 bytes to slave device
-        spi.read(2) #Read 2 bytes from slave device
-        spi.xfer([0x01, 0x02], 2)   #Write 2 byte and then read 2 bytes.
+	spi.write([0x01, 0x02]) #Write 2 bytes to slave device
+	spi.read(2) #Read 2 bytes from slave device
+	spi.xfer([0x01, 0x02], 2)   #Write 2 byte and then read 2 bytes.
 
-        spi.close() #Close SPI bus
+	spi.close() #Close SPI bus
 
 Changelog
 ---------
