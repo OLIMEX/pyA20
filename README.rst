@@ -180,18 +180,19 @@ opened \* Some data is transfered to slave device
 Changelog
 ---------
 
--  pyA20 0.2.10 (21 NOV 2017)
+-  pyA20 0.2.11 (21 NOV 2017)
 
-   -  Updated README
-   -  Removed processor checking to allow build scripts
-   -  Update license
+	- Fixed mapping on portG
+	-  Updated README
+	-  Removed processor checking to allow build scripts
+	-  Update license
 
 -  pyA20 0.2.0 (02 SEP 2014)
 
-   -  Updated to enable SPI and I2C control
-   -  GPIO constant in separate modules
-   -  Added example files
-   -  Added support for Python3
+	-  Updated to enable SPI and I2C control
+	-  GPIO constant in separate modules
+	-  Added example files
+	-  Added support for Python3
 
 .. |Build Status| image:: https://travis-ci.org/StefanMavrodiev/pyA20.svg?branch=master
    :target: https://travis-ci.org/StefanMavrodiev/pyA20
