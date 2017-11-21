@@ -14,31 +14,43 @@ not guaranteed. You can check
 `wiki <https://www.olimex.com/wiki/A20-OLinuXino-MICRO>`__ for more
 information.
 
-**Notes**: \* When using GPIO make sure that the desired gpio is not
-used by another periphery. \* Using this library requires root access.
+**Notes**:
+
+	* When using GPIO make sure that the desired gpio is not used by another periphery.
+	* Using this library requires root access.
 
 GPIO methods
 ------------
 
-The following methods are available: \* **init()** - Make initialization
-of the module. Must be called first. \* **getcfg()** - Read current
-configuration of gpio. \* **setcfg()** - Write configuration to gpio. \*
-**input()** - Return current value of gpio. \* **output()** - Set output
-value. \* **pullup()** - Set pull-up/pull-down.
+The following methods are available:
 
-The available constants are: \* **HIGH** - 1 \* **LOW** - 0 \* **INPUT**
-- 0 \* **OUPTUT** - 1 \* **PULLUP** - 1 \* **PULLDOWN** - 2
+	* **init()** - Make initialization of the module. Must be called first.
+	* **getcfg()** - Read current configuration of gpio.
+	* **setcfg()** - Write configuration to gpio.
+	* **input()** - Return current value of gpio.
+	* **output()** - Set output value.
+	* **pullup()** - Set pull-up/pull-down.
 
-The gpio are named two ways: \* By port name: PH0, PG2, PE10, etc. These
-can be imported from port module:
+The available constants are:
+
+	* **HIGH** - 1
+	* **LOW** - 0
+	* **INPUT** - 0
+	* **OUPTUT** - 1
+	* **PULLUP** - 1
+	* **PULLDOWN** - 2
+
+The gpio are named two ways:
+
+	* By port name: PH0, PG2, PE10, etc. These can be imported from port module:
 
 .. code:: python
 
         >>> from pyA20.gpio import port
         >>> dir(port)
 
--  By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3
-   and etc. These can be imported from connector module:
+	*  By connector name and pin number: gpio2p12, gpio3p8, lcdp18, uext1p3 and
+	etc. These can be imported from connector module:
 
    .. code:: python
 
@@ -170,7 +182,7 @@ opened \* Some data is transfered to slave device
 Changelog
 ---------
 
--  pyA20 0.2.7 (20 NOV 2017)
+-  pyA20 0.2.8 (20 NOV 2017)
 
    -  Updated README
    -  Removed processor checking to allow build scripts
