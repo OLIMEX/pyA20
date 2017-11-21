@@ -12,8 +12,14 @@ python:
   - "3.7-dev" # 3.7 development branch
   - "nightly"
 
+install:
+  - python setup.py install
+
 script:
-  - python setup.py build
+  - set -e
+  - trial pyA20.gpio
+  - trial pyA20.i2c
+  - trial pyA20.spi
 
 deploy:
   provider: pypi
