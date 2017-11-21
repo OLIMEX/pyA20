@@ -1,10 +1,21 @@
 language: python
 python:
+  # - "2.6"
   - "2.7"
+  # - "3.2"
+  # - "3.3"
+  # - "3.4"
   - "3.5"
+  # - "3.5-dev" # 3.5 development branch
+  # - "3.6"
+  # - "3.6-dev" # 3.6 development branch
+  # - "3.7-dev" # 3.7 development branch
+  # - "nightly"
 
 install:
   - python setup.py install
+  - rm -rf
+  - find . -name "*.pyc" -delete
 
 script:
   - trial pyA20.gpio
@@ -17,5 +28,6 @@ deploy:
   password:
     secure: T5HpzS8bGC3JcxPFxS6Esg23SdFcD74Jj/1jwVzmE2FennMQI9Bpnmfd2O6TrDmLlpCQ/ZTbzaWpBD2Zl38f80ySCMcbF2g7XH5vJYIWuJT5iQQnd6eCjjL5kTZ2sb8veY2ygbLF8xEUkVhXqd4abjwKYgLessZT64cf1cTlZWlvm3LFFGmtWi3AcQy9nAyXPG8q68rn4fLco3z3Af4gCadMWvT0Z+xWo2OXkdrZsl0CzcXthsnKHuxuDYnCniMnqruKlDDac6M5Fs3PnVeBlwZEq4BvmHlWkty6/5OwL3wEZ8AKp5IMNcMez9wT2yKcW63GA7nkV8XMNa1RF23fdK5ORIQUhibJncGgaacPeycxz0XyIwKG5OnF1yp/oV6h5ou8DFiKh5x/igD7tM6eX+jVjHOxM9+1jDsrhSn5kAATYy9KleOb9g7blC/CXiyDkUNhzUXx/OmZaSy0qkyQaZ5g6x1oHvLdkq1jRhi//6BYHKcLqvw1qydxj0FI9HQlrPw9BTO8FNfl4lYNnjBatmB74FSZ7zdB+2+TipfSNPcyitpP6dx7wwcDuBUGtKZxzUyyGMcpqx4fXimYJluWYcBldrUCJEOrF9JRcX5QoKhcAUo6a1J9Bu/GbJ36wVfsZQ/SVhTB3Ake7qpksM++M7DT/G8emrQ0c+xOkQTp4so=
   on:
+    skip_cleanup: true
     tags: true
     branch: master

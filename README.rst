@@ -192,7 +192,7 @@ opened \* Some data is transfered to slave device
 Changelog
 ---------
 
--  pyA20 0.2.5 (20 NOV 2017)
+-  pyA20 0.2.6 (20 NOV 2017)
 
    -  Updated README
    -  Removed processor checking to allow build scripts
