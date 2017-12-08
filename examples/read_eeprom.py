@@ -7,7 +7,7 @@ The i2c address can be different, but on this specific board is 0x50.
 The text will be big mess if python3 is used.
 """
 
-from pyA20 import i2c
+from pyA20.i2c import i2c
 
 __author__ = "Stefan Mavrodiev"
 __copyright__ = "Copyright 2014, Olimex LTD"

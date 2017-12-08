@@ -131,7 +131,7 @@ Some data is written, then verified
 
 	#!/usr/bin/env python
 
-	from pyA20 import i2c
+	from pyA20.i2c import i2c
 
 	i2c.init("/dev/i2c-2")  #Initialize module to use /dev/i2c-2
 	i2c.open(0x55)  #The slave device address is 0x55
@@ -156,7 +156,7 @@ opened \* Some data is transfered to slave device
 
 	#!/usr/bin/env python
 
-	from pyA20 import spi
+	from pyA20.spi import spi
 
 	spi.open("/dev/spidev2.0")
 	#Open SPI device with default settings
@@ -179,10 +179,14 @@ opened \* Some data is transfered to slave device
 
 Changelog
 ---------
+-  pyA20 0.2.12 (8 DEC 2017)
+
+	-  Fixed extensions import
+	-  Update examples
 
 -  pyA20 0.2.11 (21 NOV 2017)
 
-	- Fixed mapping on portG
+	-  Fixed mapping on portG
 	-  Updated README
 	-  Removed processor checking to allow build scripts
 	-  Update license
