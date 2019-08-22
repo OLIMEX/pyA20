@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Read from the EEPROM chip on A20-OLinuXino-MICRO
 
 On the board there is small chip U3. This is 16kb eeprom memory AT24C16BN.
@@ -26,32 +26,32 @@ i2c.open(eeprom_address)
 """Set address pointer to the first"""
 i2c.write([0x00])
 
-print "Dump eeprom:"
-print "="*24
+print("Dump eeprom:")
+print("="*24)
 
-print "    ",
-for i in xrange(16):
-    print " %x" % i,
+print("    ", end=' ')
+for i in range(16):
+    print(" %x" % i, end=' ')
 
-print "\t",
-for i in xrange(16):
-    print "%x" % i,
-print ""
+print("\t", end=' ')
+for i in range(16):
+    print("%x" % i, end=' ')
+print("")
 
 """Print data"""
-for i in xrange(128):
+for i in range(128):
     page = i2c.read(16)
-    print "%03x:" % (i*0x10),
-    for j in xrange(0, 16):
-        print "%02x" % page[j],
+    print("%03x:" % (i*0x10), end=' ')
+    for j in range(0, 16):
+        print("%02x" % page[j], end=' ')
 
     """Print characters"""
-    print "\t",
-    for j in xrange(16):
-        if page[j] <= 126 and page[j] >= 32:
-            print chr(page[j]),
+    print("\t", end=' ')
+    for j in range(16):
+        if 126 >= page[j] >= 32:
+            print(chr(page[j]), end=' ')
         else:
-            print '.',
-    print ""
+            print('.', end=' ')
+    print("")
 
 i2c.close()

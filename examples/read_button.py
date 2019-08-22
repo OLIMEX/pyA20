@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Read button.
 
 Make gpio input and enable pull-up resistor.
@@ -13,7 +13,6 @@ if not os.getegid() == 0:
 
 from pyA20.gpio import gpio
 from pyA20.gpio import connector
-from pyA20.gpio import port
 
 __author__ = "Stefan Mavrodiev"
 __copyright__ = "Copyright 2014, Olimex LTD"
@@ -46,4 +45,4 @@ try:
         gpio.output(led, not state)
 
 except KeyboardInterrupt:
-    print ("Goodbye.")
+    print("Goodbye.")
