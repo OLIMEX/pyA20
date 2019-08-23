@@ -198,5 +198,5 @@ Changelog
 	-  Added example files
 	-  Added support for Python3
 
-.. |Build Status| image:: https://travis-ci.org/StefanMavrodiev/pyA20.svg?branch=master
-   :target: https://travis-ci.org/StefanMavrodiev/pyA20
+.. |Build Status| image:: https://travis-ci.org/OLIMEX/pyA20.svg?branch=master
+   :target: https://travis-ci.org/OLIMEX/pyA20
