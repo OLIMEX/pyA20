@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Basic blinking led example.
 
 The led on A20-OLinuXino-MICRO  blinks with rate of 1Hz like "heartbeat".
@@ -30,7 +30,7 @@ gpio.init()
 gpio.setcfg(led, gpio.OUTPUT)
 
 try:
-    print ("Press CTRL+C to exit")
+    print("Press CTRL+C to exit")
     while True:
         gpio.output(led, 1)
         sleep(0.1)
@@ -44,4 +44,4 @@ try:
 
         sleep(0.6)
 except KeyboardInterrupt:
-    print ("Goodbye.")
+    print("Goodbye.")
